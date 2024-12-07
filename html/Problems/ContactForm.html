@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+</head>
+<body>
+        <form action="xyz.php" method="POST" target="_blank">
+
+        <h1>Contact Form</h1>
+        
+        <label for="fullname_">Full Name : </label>
+        <input type="text" name="fullname" id="fullname_" required><br><br>
+
+        <label for="email_">Email : </label>
+        <input type="email" name="email" id="email_" placeholder="xyz@gmail.com" required><br><br>
+
+        <label for="phone_">Phone Number : </label>
+        <input type="tel" name="phone" id="phone_" placeholder="00000-00000" pattern="[0-9]{5}-[0-9]{5}" required><br><br>
+
+        <label for="message_">Message : </label>
+        <textarea name="message" id="message_" placeholder="Your message here..." required></textarea><br><br>
+
+        <input type="submit" value="Submit">
+
+    </form>
+
+    
+    
+</body>
+</html>
