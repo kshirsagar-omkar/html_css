@@ -1,0 +1,22 @@
+/* 
+Problem 4: Box Model Practice
+Create a div with the following specifications:
+
+Set the width to 300px, height to 150px.
+Set a 15px padding inside the div.
+Set a 10px margin around the div.
+Add a solid 2px green border.
+Set the background color of the div to light yellow.
+What will the total width and height of this div be after adding padding, margin, and border?
+*/
+
+#problem_4
+{
+    width: 300px;
+    height: 150px;
+    padding: 15px;
+    margin: 10px;
+    background-color: lightyellow;
+    border: solid 2px green;
+
+}
