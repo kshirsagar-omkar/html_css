@@ -1,0 +1,20 @@
+/* 
+Problem 2: Text and Font Styling
+Create a p (paragraph) element with the following styling:
+Set the text color to dark green.
+Set the font size to 18px.
+Set the font family to Arial, sans-serif.
+Make the font bold and italic.
+Add 15px of line height to the text. 
+*/
+
+
+#problem_2
+{
+    color: darkgreen;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    line-height: 15px;
+}

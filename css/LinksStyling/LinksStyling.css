@@ -1,0 +1,20 @@
+/* Problem 3: Links Styling
+Create an anchor (<a>) tag with the following styles:
+Set the text color to blue for the default state.
+Change the text color to red when the link is hovered.
+Remove the underline from the link.
+Add 5px padding around the link. */
+
+
+
+
+#problem_3
+{
+    color: blue;
+    text-decoration: none;
+    padding: 5px;
+}
+#problem_3:hover
+{
+    color: red;
+}
