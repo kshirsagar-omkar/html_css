@@ -1,0 +1,25 @@
+/* 
+Problem 6: Responsive Layout with Width and Height
+Create a div that has the following behavior:
+It should have a width of 100% and height of 300px by default.
+When the screen width is smaller than 600px, the width should become 100% and the height should reduce to 200px.
+Use media queries to implement this responsive design.
+*/
+
+
+#Responsive_div
+{
+    width: 100%;
+    height: 300px;
+    background-color: chocolate;
+}
+
+
+@media ( max-width:600px ) 
+{
+    #Responsive_div
+    {
+        height: 200px;
+        background-color: aqua;
+    }
+}

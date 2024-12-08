@@ -1,0 +1,24 @@
+/* 
+Problem 5: Centering Elements
+Center a div horizontally and vertically within a parent container. The parent container has a width of 600px and a height of 400px.
+The child div should have a width of 200px and a height of 100px.
+Use CSS Flexbox to achieve this layout.
+
+*/
+
+#parent
+{
+    width: 600px;
+    height: 400px;
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#child
+{
+    width: 200px;
+    height: 100px;
+    background-color:blueviolet;
+}
