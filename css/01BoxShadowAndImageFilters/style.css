@@ -1,0 +1,13 @@
+#parentdiv
+{
+    width: auto;
+    height: auto;
+    margin:274px 600px;
+
+}
+
+#image
+{
+    box-shadow: 0px 0px 100px 100px gray;
+    /* filter: blur(3px); */
+}
