@@ -1,164 +1,240 @@
-/* Google Homepage Clone:
-
-Create the Google search page with:
-A centered logo.
-A search bar with rounded edges.
-Two buttons below the search bar.
-Footer links styled horizontally.
-Use a hover effect for buttons. */
-
 body
 {
-    background-color:#272a35;
+    background-color: rgb(36, 37, 39);
+    display: grid;
+    grid-template-rows: 40px;
 }
 
 
 
-/* nav start */
+
+:root
+{
+    --color: white ;
+    --font: Arial, Helvetica, sans-serif;
+}
+
+
+
+
+
+
+/* Nav Bar ============================================================================================================== */
+
+
+
 nav
 {
-
-    height: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    
+    /* background-color: antiquewhite; */
+    display: inline-grid;
+    justify-content: space-between;
+    grid-template-columns: 150px 300px;
 }
-nav ul:hover
+
+
+
+
+
+
+/* left Container ------------------------------------------------------------------------ */
+#nav-left-container
 {
-    cursor: pointer;
+    height: 100%;
+    /* background-color: rgb(34, 43, 40); */
+    display: inline-grid;
+    grid-template-columns: 50px 50px;
+    grid-column-gap: 10px;
+    justify-content: center;
+    align-content: center;
 }
 
-nav li
+#nav-left-container div
 {
     display: inline;
-    color: white;
-    padding: 7px 10px;
+    /* background-color: brown; */
+    /* color: var(--color); */
+    font-family: var(--font);
+    font-size: 15px;
+
+}
+
+#nav-left-container a
+{
+    color: var(--color);
+    text-decoration: none;
+}
+
+#nav-left-container a:hover
+{
+    text-decoration:underline;
 }
 
 
-.nav-decoration:hover
+
+
+
+
+
+
+/* Right Container ------------------------------------------------------------------------*/
+
+#nav-right-container
+{
+    height: 100%;
+    /* background-color: rgb(36, 48, 102); */
+    display: inline-grid;
+    grid-template-columns: 45px 45px 45px 50px 50px;
+    grid-column-gap: 10px;
+    justify-content: end;
+    align-content: center;
+}
+
+#nav-right-container div
+{
+    display: inline;
+    /* background-color: brown; */
+    justify-content: center;
+    align-content: center;
+    color: var(--color);
+    font-family: var(--font);
+    font-size: 13px;
+    height: 30px;
+}
+
+.nav-right-container-text ,a
+{
+    text-align: center;
+    color: var(--color);
+    text-decoration: none;
+}
+
+.nav-right-container-text a:hover
 {
     text-decoration: underline;
 }
 
 
-#g-acc
+
+#nav-right-container div img
 {
-    margin-right: 10px;
+    width: 23px;
+    height: 60%;
+    border-radius: 20%;
+    margin-left: 15px;
+}
+
+#nav-right-container div #google-account
+{
+    border-radius: 50%;
+    margin-left: 1px;
 }
 
 
 
-.nav-img
+
+
+
+
+
+/* body =============================================================================================== */
+#body
 {
-    width: 25px;
-    height: 22px;
+    margin-top: 150px;
+    display: grid;
+    grid-template-rows: 100px 48px 37px 35px;
+    /* background-color: aqua; */
+    grid-row-gap: 28px;
+    justify-content: space-around;
+    padding-top: 50px;
 }
 
-#gmail-photo
+
+#body div
 {
-    border-radius: 40px;
-}
-
-/* nav ends */
-
-
-
-
-
-/* Google logo starts */
-
-
-#google-logo
-{
-    /* background-color: rgb(0, 0, 0); */
-    margin-top: 75px;
-    display: flex;
+    /* background-color: yellow;    */
+    display:inline-grid;
     justify-content: center;
-}
-
-#google-logo img
-{
-    
-    width: 272px;
-    height: 91px; 
+    align-content: center;
 }
 
 
-/* Google logo ends */
+/* Body Row1 ---------------------------------------------------------------------------------------------- */
 
-
-
-
-
-
-/* search bar starts */
-
-#search-bar
+#body #row1 img
 {
-    display: flex;
-    align-items: center;
+    /* background-color: none; */
+    height: 100px;
+}
+
+
+
+
+
+
+/* Body Row2 ---------------------------------------------------------------------------------------------- */
+
+
+
+
+#body #row2
+{
+    width: 580px;
+    border-radius: 100px;
+    background-color: rgb(238, 238, 238);
+    display: inline-grid;
+    grid-template-columns: 10% 20%;
     justify-content: space-between;
-    margin-top: 38px;
-    margin-left: 30.5%;
-    margin-right: 30.5%;
-    background-color: rgb(255, 255, 255);    
-    height: 48px;
-    border-radius: 25px;
-    cursor: text;
-    
 }
 
-
-#left-container
+#body #row2:hover
 {
-    height: inherit;
-    /* background-color: aquamarine; */
-    display: flex;
-    justify-content: left;
-
+    background-color: rgb(255, 255, 255);
 }
 
-#left-container #search
+#body #row2-left-container img
 {
-    
-    padding: 16px 10px 40px 20px ;
-    height: 15px;
-    display: inline-block;
-}
-
-
-#left-container #search-text
-{
-    display: inline-block;
-    padding-top: 15px;
-    padding-left: 9px;
-    color: rgb(88, 88, 88);
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 17px;
-}
-
-
-
-#right-container
-{
-    height: inherit;
-    /* background-color: aquamarine; */
-    display: flex;
-    justify-content: right;
-}
-
-#right-container .search-by
-{
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-right: 22px;
-    width: auto;
     height: 18px;
-    display: inline-block;
-    cursor: pointer;
-    
+    width: 16px;
 }
 
-/* search bar starts */
+#body #row2-right-container
+{
+    height: 50px;
+    /* background-color:brown; */
+    display: flex;
+    justify-content: end;
+    align-content: center;
+
+}
+
+#row2-right-container img
+{
+    padding-top: 15px;
+    padding-right: 20px;
+    height: 22px;
+    width: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+/* Body Row3 ---------------------------------------------------------------------------------------------- */
+
+
+#row3
+{
+    display: inline-grid;
+    grid-template-columns: 20% 24%;
+    grid-column-gap: 15px;
+}
+
+#row3 .row3-button
+{
+    height: 35px;
+}

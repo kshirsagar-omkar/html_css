@@ -3,62 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="style.css">
-    <title>Google Homepage Clone</title>
+    <title>Google Home Page</title>
 </head>
 <body>
-    
+
+    <!--Nav Bar-->
     <nav>
-        <ul>
-            <li class="nav-decoration" >Gmail</li>
-            <li class="nav-decoration" >Images</li>
-            <li><img class="nav-img" src="/home/omkar/Documents/omkar/html_css/css/02GoogleHomePage/invert_flask.png" alt="filters" title="filters"></li>
-            <li><img class="nav-img" src="/home/omkar/Documents/omkar/html_css/css/02GoogleHomePage/invert_dots-menu.png" alt="Google Apps" title="Google Apps"></li>
-            <li id="g-acc" title="Google Account &#10;Omkar Kshirsagar &#10;omkarkshirsagar9999@gmail.com"> <img class="nav-img" id="gmail-photo" src="/home/omkar/Documents/omkar/html_css/css/02GoogleHomePage/O_img.png" alt="Gmail Pic"> </li>
-        </ul>
+
+        <div id="nav-left-container">
+
+                <div> <a href="https://about.google/?fg=1&utm_source=google-IN&utm_medium=referral&utm_campaign=hp-header">About</a> </div>
+            
+                <div> <a href="https://store.google.com/in/?utm_source=hp_header&utm_medium=google_ooo&utm_campaign=GS100042&hl=en-GB&pli=1"> Store </a> </div>
+        
+        </div>
+
+
+        <div id="nav-right-container">
+
+                <div class="nav-right-container-text"> <a href="#"> Gmail </a> </div>
+                <div class="nav-right-container-text"> <a href="#">Images</a> </div>
+
+                <div>
+                    <a href="#search-labs"> <img src="resource/flask.png" alt="search-labs" title="Search Labs"> </a>
+                         
+                </div>
+
+                <div>
+                    <a href="#google-apps"> <img src="resource/dots-menu.png" alt="search-labs" title="Google Apps"> </a>
+                </div>
+
+                <div> &nbsp;
+                    <a href="#google-account"> <img id="google-account"  src="resource/O_img.png" alt="search-labs"
+                        title="Google Account &#10;Omkar Kshirsagar &#10;omkarkshirsagar2005@gmail.com"> </a>
+                </div>
+
+        </div>
+
     </nav>
 
 
 
-    <div id="google-logo">
-        <img src="/home/omkar/Documents/omkar/html_css/css/02GoogleHomePage/googlelogo_light_color_272x92dp.png" alt="google logo">
+    
+
+
+
+    <!-- Body -->
+    <div id="body">
+            <div id="row1">
+                    <img src="resource/googlelogo_light_color_272x92dp.png" alt="google">
+            </div>
+
+            <div id="row2">
+                    <div id="row2-left-container">
+                        <img src="resource/search.png" alt="search icon">
+                    </div>
+
+                    <div id="row2-right-container">
+                        <img src="resource/search by voice.png" alt="search by voice">
+                        <img src="resource/search by image.png" alt="search by image">
+                    </div>
+            </div>
+
+            <div id="row3">
+                    <input class="row3-button" type="button" value="Google Search">
+                    <input class="row3-button" type="button" value="I'm Feeling Lucky">
+            </div>
+
+            <div id="row4">
+                    google offered in : languages
+            </div>
     </div>
 
 
+    <!--footer-->
+    <footer>
 
-    <div id="search-bar">
-
-        <div id="left-container">
-
-            <!--Search logo-->
-            <div>
-                <img id="search" src="/home/omkar/Documents/omkar/html_css/css/02GoogleHomePage/search.png" alt="search">
-            </div>
-
-            <!--text on search bar-->
-            <div id="search-text">
-                Search Google or type URL
-            </div>
-
-        </div>
-        
-
-        <div id="right-container">
-
-            <!--search by voice-->
-            <div>
-                <img class="search-by" src="/home/omkar/Documents/omkar/html_css/css/02GoogleHomePage/search by voice.png" alt="search by voice">
-            </div>
-
-            <!--search by image-->
-            <div>
-                <img class="search-by" src="/home/omkar/Documents/omkar/html_css/css/02GoogleHomePage/search by image.png" alt="search by image">
-            </div>
-
-        </div>
-
-
-    </div>
+    </footer>
 
 
 </body>
