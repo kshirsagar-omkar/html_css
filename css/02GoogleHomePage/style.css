@@ -184,6 +184,7 @@ nav
     display: inline-grid;
     grid-template-columns: 10% 20%;
     justify-content: space-between;
+    cursor: text;
 }
 
 #body #row2:hover
@@ -204,7 +205,6 @@ nav
     display: flex;
     justify-content: end;
     align-content: center;
-
 }
 
 #row2-right-container img
@@ -213,6 +213,7 @@ nav
     padding-right: 20px;
     height: 22px;
     width: 20px;
+    cursor: pointer;
 }
 
 
@@ -237,4 +238,105 @@ nav
 #row3 .row3-button
 {
     height: 35px;
+    border: 1px solid black;
+}
+
+
+#row3 .row3-button:hover
+{
+    border: 2px solid black;
+    box-shadow: 0px 0px 6px rgb(141, 129, 129);
+}
+
+
+
+
+
+
+
+
+/* Body Row4 ---------------------------------------------------------------------------------------------- */
+
+
+#row4
+{
+    font-family: var(--font);
+    color: var(--color);   
+    width: 590px;
+    justify-content: flex-start;
+}
+
+#row4 li
+{
+    display: inline;
+    font-size: 14px;
+}
+
+#row4 a
+{
+    color: #3a82f0;
+}
+
+#row4 a:hover
+{
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer ============================================================================== */
+
+footer
+{
+    background-color: rgb(25, 27, 32);
+    height: 90px;
+    position: relative;
+    top: 316px;
+
+    display: inline-grid;
+    grid-template-rows: 50% 50%;
+}
+
+footer div
+{
+    align-content: center;
+    color: var(--color);
+    border: 1px solid gray;
+}
+
+footer #a
+{
+    padding-left: 57px;
+}
+
+footer #b li
+{
+    padding-left: 10px;
+    padding-right: 30px;
+    color: var(--color);
+    display: inline;
+
+}
+
+footer #b .right
+{
+    float: right;
+    
+}
+
+
+footer #b li:hover
+{
+    text-decoration: underline;
+    cursor: pointer;
 }
