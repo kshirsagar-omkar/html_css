@@ -1,0 +1,156 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Full viewport height and center alignment */
+body {
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    color: white;
+}
+
+/* Container for the login page */
+.container-fluid {
+    height: 100%;
+}
+
+/* Left section with a background image */
+.left-section {
+    background: url('https://source.unsplash.com/1600x900/?education,students') no-repeat center center;
+    background-size: cover;
+    height: 100%;
+    padding: 50px;
+    color: white;
+    animation: fadeIn 2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-section .text-center {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.left-section h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.left-section p {
+    font-size: 24px;
+}
+
+/* Right section for login form */
+.right-section {
+    height: 100%;
+    padding: 50px;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    animation: slideIn 1.5s ease-out;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-control {
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #dddfe2;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 10px rgba(0, 114, 255, 0.5);
+    border-color: #0072ff;
+}
+
+.btn {
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #0072ff;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.btn-success {
+    background-color: #28a745;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+.separator {
+    height: 1px;
+    background-color: #dddfe2;
+    margin: 20px 0;
+}
+
+.right-section p {
+    margin-top: 20px;
+    text-align: center;
+    color: #606770;
+    font-size: 14px;
+}
+
+.right-section p a {
+    color: #0072ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.right-section p a:hover {
+    text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
