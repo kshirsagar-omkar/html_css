@@ -1,0 +1,228 @@
+/* LeetCode Theme Variables */
+:root {
+    --bg-dark: #1a1a1a;
+    --card-bg: #282828;
+    --primary-color: #ffa116;
+    --text-color: #ffffff;
+    --text-secondary: #8a8a8a;
+    --border-color: #3e3e3e;
+    --input-bg: #1a1a1a;
+    --success: #2cbb5d;
+    --error: #ff4d4f;
+}
+
+/* Base Styles */
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-color);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+}
+
+/* Navbar Styles */
+.top-navbar {
+    background-color: var(--card-bg);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-time {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Login Card Styles */
+.login-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-top: 4rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.login-card h1 {
+    color: var(--text-color);
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.input-group-text {
+    background-color: var(--input-bg);
+    border-color: var(--border-color);
+    color: var(--text-secondary);
+}
+
+.form-control {
+    background-color: var(--input-bg);
+    border-color: var(--border-color);
+    color: var(--text-color);
+    height: 45px;
+}
+
+.form-control:focus {
+    background-color: var(--input-bg);
+    border-color: var(--primary-color);
+    color: var(--text-color);
+    box-shadow: 0 0 0 2px rgba(255, 161, 22, 0.2);
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 12px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #ff8c00;
+    transform: translateY(-1px);
+}
+
+.toggle-password {
+    border-color: var(--border-color);
+    color: var(--text-secondary);
+}
+
+.toggle-password:hover {
+    background-color: var(--input-bg);
+    color: var(--primary-color);
+}
+
+/* Links Styles */
+.login-links {
+    margin-top: 1.5rem;
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.login-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.login-links a:hover {
+    color: var(--primary-color);
+}
+
+.separator {
+    color: var(--text-secondary);
+    margin: 0 10px;
+}
+
+/* Form Validation Styles */
+.form-control.is-valid {
+    border-color: var(--success);
+    background-image: none;
+}
+
+.form-control.is-invalid {
+    border-color: var(--error);
+    background-image: none;
+}
+
+/* Custom Alert Styles */
+.swal2-popup {
+    background-color: var(--card-bg) !important;
+    color: var(--text-color) !important;
+}
+
+.swal2-title, .swal2-content {
+    color: var(--text-color) !important;
+}
+
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .login-card {
+        margin: 2rem 1rem;
+        padding: 1.5rem;
+    }
+
+    .brand span {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* Loading Effects */
+.is-focusing {
+    transition: all 0.3s ease;
+}
+
+.is-focusing .form-control {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(255, 161, 22, 0.2);
+}
+
+/* Button Loading State */
+.btn .spinner-border {
+    margin-right: 8px;
+    vertical-align: middle;
+    width: 1rem;
+    height: 1rem;
+}
+
+/* Input Focus Animation */
+.form-control:focus {
+    animation: inputFocus 0.3s ease;
+}
+
+@keyframes inputFocus {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+/* Button Transitions */
+.btn {
+    transition: all 0.3s ease;
+}
+
+/* Improved Error States */
+.is-invalid {
+    animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}

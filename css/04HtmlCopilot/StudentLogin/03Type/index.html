@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal Login</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #0f0c29;
+            background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+            background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.5;
+            animation: float 8s infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) translateX(0); opacity: 0; }
+            50% { opacity: 0.8; }
+            100% { transform: translateY(-100vh) translateX(100px); opacity: 0; }
+        }
+
+        .login-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            z-index: 2;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: slideUp 0.8s forwards;
+        }
+
+        @keyframes slideUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .login-header h2 {
+            color: white;
+            font-weight: 600;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .login-header p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .form-floating {
+            margin-bottom: 20px;
+        }
+
+        .form-floating input {
+            background: rgba(255, 255, 255, 0.1) !important;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            color: white !important;
+            height: 60px;
+        }
+
+        .form-floating input:focus {
+            background: rgba(255, 255, 255, 0.2) !important;
+            border-color: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+        }
+
+        .form-floating label {
+            color: rgba(255, 255, 255, 0.7);
+            padding-left: 20px;
+        }
+
+        .form-floating input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .btn-login {
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            border: none;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 500;
+            width: 100%;
+            margin-top: 20px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .btn-login:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: all 0.5s ease;
+        }
+
+        .btn-login:hover:before {
+            left: 100%;
+        }
+
+        .btn-login:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(255, 107, 107, 0.4);
+        }
+
+        .social-login {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 20px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .forgot-password {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .forgot-password a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .forgot-password a:hover {
+            color: white;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .date-time {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            z-index: 2;
+        }
+
+        .loading {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .loading span {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            margin: 0 3px;
+            animation: bounce 0.6s infinite alternate;
+        }
+
+        .loading span:nth-child(2) { animation-delay: 0.2s; }
+        .loading span:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes bounce {
+            to { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="date-time" id="datetime"></div>
+
+    <!-- Particle effects -->
+    <div class="particles" id="particles"></div>
+
+    <div class="login-container">
+        <div class="login-header">
+            <h2><i class="fas fa-graduation-cap"></i> Student Portal</h2>
+            <p>Welcome back, future leader!</p>
+        </div>
+
+        <form id="loginForm">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="studentId" placeholder="Student ID" required>
+                <label for="studentId"><i class="fas fa-user"></i> Student ID</label>
+            </div>
+
+            <div class="form-floating">
+                <input type="password" class="form-control" id="password" placeholder="Password" required>
+                <label for="password"><i class="fas fa-lock"></i> Password</label>
+            </div>
+
+            <div class="form-check mb-3">
+                <input type="checkbox" class="form-check-input" id="rememberMe">
+                <label class="form-check-label text-white" for="rememberMe">Remember me</label>
+            </div>
+
+            <button type="submit" class="btn btn-login">
+                <span class="btn-text">Login</span>
+                <div class="loading">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+        </form>
+
+        <div class="social-login">
+            <div class="social-btn"><i class="fab fa-google"></i></div>
+            <div class="social-btn"><i class="fab fa-facebook-f"></i></div>
+            <div class="social-btn"><i class="fab fa-apple"></i></div>
+        </div>
+
+        <div class="forgot-password">
+            <a href="#">Forgot Password?</a>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Create particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.width = Math.random() * 5 + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.left = Math.random() * 100 + 'vw';
+                particle.style.animationDuration = (Math.random() * 8 + 5) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Update datetime
+        function updateDateTime() {
+            const now = new Date();
+            document.getElementById('datetime').textContent = now.toLocaleString();
+        }
+
+        // Form handling
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const btnText = document.querySelector('.btn-text');
+            const loading = document.querySelector('.loading');
+            
+            btnText.style.display = 'none';
+            loading.style.display = 'block';
+
+            setTimeout(() => {
+                const studentId = document.getElementById('studentId').value;
+                const password = document.getElementById('password').value;
+
+                console.log('Login attempt:', { studentId, password });
+
+                if (studentId && password) {
+                    alert('Login successful! Welcome back!');
+                } else {
+                    alert('Please fill in all fields!');
+                }
+
+                btnText.style.display = 'block';
+                loading.style.display = 'none';
+            }, 2000);
+        });
+
+        // Initialize
+        createParticles();
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+
+        // Add hover effect to input fields
+        const inputs = document.querySelectorAll('input');
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.style.transform = 'scale(1.02)';
+                this.parentElement.style.transition = 'all 0.3s ease';
+            });
+
+            input.addEventListener('blur', function() {
+                this.parentElement.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>

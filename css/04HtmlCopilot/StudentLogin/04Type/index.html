@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login - Interactive</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #0f0c29;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            height: 100vh;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        
+        .login-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+            max-width: 450px;
+            margin: 100px auto;
+            position: relative;
+            z-index: 2;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .login-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .login-header h2 {
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+
+        .login-header p {
+            color: #aaa;
+        }
+        
+        .form-control {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 10px;
+            padding: 15px;
+            color: white;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+        }
+
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .btn-login {
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            color: white;
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn-login:hover {
+            background: linear-gradient(45deg, #ff8e8e, #ff6b6b);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .form-label {
+            color: #ffffff;
+            font-weight: 500;
+        }
+        
+        .forgot-password {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .forgot-password a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+        }
+        
+        .forgot-password a:hover {
+            color: #ff6b6b;
+            text-shadow: 0 0 10px rgba(255, 107, 107, 0.4);
+        }
+
+        .date-time {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            z-index: 2;
+            text-align: right;
+        }
+
+        .user-info {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            z-index: 2;
+        }
+
+        .form-check-label {
+            color: white;
+        }
+
+        .input-icon {
+            position: relative;
+        }
+
+        .input-icon i {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating-icon {
+            font-size: 100px;
+            color: rgba(255, 255, 255, 0.1);
+            position: absolute;
+            z-index: 1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .icon1 { top: 20%; left: 10%; animation-delay: 0s; }
+        .icon2 { top: 60%; right: 10%; animation-delay: 2s; }
+        .icon3 { bottom: 10%; left: 30%; animation-delay: 4s; }
+    </style>
+</head>
+<body>
+    <!-- Particles Container -->
+    <div id="particles-js"></div>
+
+    <!-- Floating Icons -->
+    <i class="fas fa-graduation-cap floating-icon icon1"></i>
+    <i class="fas fa-book floating-icon icon2"></i>
+    <i class="fas fa-pencil-alt floating-icon icon3"></i>
+
+    <!-- Date Time Display -->
+    <div class="date-time">
+        <div id="current-time"></div>
+        <div id="current-date"></div>
+    </div>
+
+    <!-- User Info -->
+    <div class="user-info">
+        <i class="fas fa-user"></i> kshirsagar-omkar
+    </div>
+
+    <div class="container">
+        <div class="login-container">
+            <div class="login-header">
+                <h2>Student Login</h2>
+                <p>Welcome back! Please login to your account</p>
+            </div>
+            
+            <form id="loginForm">
+                <div class="mb-3">
+                    <label for="studentId" class="form-label">Student ID</label>
+                    <div class="input-icon">
+                        <input type="text" class="form-control" id="studentId" required 
+                               placeholder="Enter your student ID">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <div class="input-icon">
+                        <input type="password" class="form-control" id="password" required 
+                               placeholder="Enter your password">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                </div>
+                
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="rememberMe">
+                    <label class="form-check-label" for="rememberMe">Remember me</label>
+                </div>
+                
+                <button type="submit" class="btn btn-login">
+                    <i class="fas fa-sign-in-alt me-2"></i> Login
+                </button>
+            </form>
+            
+            <div class="forgot-password">
+                <a href="#"><i class="fas fa-key me-1"></i> Forgot Password?</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Particles.js Configuration
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: "#ffffff" },
+                shape: { type: "circle" },
+                opacity: {
+                    value: 0.5,
+                    random: true,
+                    animation: { enable: true, speed: 1, minimumValue: 0.1, sync: false }
+                },
+                size: {
+                    value: 3,
+                    random: true,
+                    animation: { enable: true, speed: 4, minimumValue: 0.3, sync: false }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#ffffff",
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: "none",
+                    random: false,
+                    straight: false,
+                    outModes: { default: "bounce" },
+                    attract: { enable: false, rotateX: 600, rotateY: 1200 }
+                }
+            },
+            interactivity: {
+                detectsOn: "canvas",
+                events: {
+                    onHover: { enable: true, mode: "repulse" },
+                    onClick: { enable: true, mode: "push" },
+                    resize: true
+                },
+                modes: {
+                    repulse: { distance: 100, duration: 0.4 },
+                    push: { particles_nb: 4 }
+                }
+            },
+            retina_detect: true
+        });
+
+        // Date and Time Update
+        function updateDateTime() {
+            const now = new Date();
+            document.getElementById('current-time').textContent = now.toLocaleTimeString();
+            document.getElementById('current-date').textContent = now.toLocaleDateString();
+        }
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+
+        // Form Submission
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const studentId = document.getElementById('studentId').value;
+            const password = document.getElementById('password').value;
+            
+            if (studentId && password) {
+                // Add success animation
+                document.querySelector('.btn-login').innerHTML = '<i class="fas fa-spinner fa-spin"></i> Logging in...';
+                setTimeout(() => {
+                    alert('Login attempt successful! Add your authentication logic here.');
+                    document.querySelector('.btn-login').innerHTML = '<i class="fas fa-sign-in-alt me-2"></i> Login';
+                }, 2000);
+            } else {
+                alert('Please fill in all fields!');
+            }
+        });
+    </script>
+</body>
+</html>
